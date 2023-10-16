@@ -11,11 +11,14 @@ let package = Package(
             name: "LottieKit",
             targets: ["LottieKit"]),
     ],
+    dependencies: [
+        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-spm", branch: "main")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "LottieKit"),
+            name: "LottieKit", dependencies: ["Lottie"]),
         .testTarget(
             name: "LottieKitTests",
             dependencies: ["LottieKit"]),
